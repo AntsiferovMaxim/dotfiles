@@ -1,0 +1,15 @@
+# Shared Zsh configuration
+
+[[ -o interactive ]] || return
+
+ZSH_CONFIG_DIR="${${(%):-%x}:A:h}"
+
+# Select the emacs keymap before any bindkey calls.
+bindkey -e
+setopt NO_BEEP
+
+source "$ZSH_CONFIG_DIR/history.zsh"
+source "$ZSH_CONFIG_DIR/completions.zsh"
+source "$ZSH_CONFIG_DIR/aliases.zsh"
+
+source "$ZSH_CONFIG_DIR/tools.zsh"

@@ -1,0 +1,24 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Also read by shfmt. A pattern containing "/" is anchored to this
+# directory, so the extensionless hook gets its own section.
+[*.sh]
+indent_style = space
+indent_size = 2
+switch_case_indent = true
+space_redirects = true
+
+[shared/git/hooks/dispatch]
+indent_style = space
+indent_size = 2
+switch_case_indent = true
+space_redirects = true
+
+[Makefile]
+indent_style = tab

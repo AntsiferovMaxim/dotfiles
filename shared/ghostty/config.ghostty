@@ -1,0 +1,18 @@
+# Appearance
+font-family = "Martian Mono"
+font-size = 13
+
+window-padding-x = 8
+window-padding-y = 8
+
+# Zsh integration
+shell-integration = detect
+
+# Clipboard security
+clipboard-read = ask
+clipboard-write = ask
+clipboard-paste-protection = true
+
+# Update notifications without automatic installation
+auto-update = check
+auto-update-channel = stable

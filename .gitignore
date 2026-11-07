@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Built from macos/config/keyboardctl.swift by keyboard.sh
+macos/config/.keyboardctl
+
+# Homebrew bundle lock
+Brewfile.lock.json

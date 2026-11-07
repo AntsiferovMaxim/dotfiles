@@ -1,0 +1,70 @@
+# Install GUI apps in the current user's Applications directory.
+cask_args appdir: "~/Applications"
+
+# Version control
+brew "git"
+brew "gh"
+
+# Search and navigation
+brew "ripgrep"
+brew "fd"
+brew "fzf"
+brew "tree"
+
+# JSON / YAML
+brew "jq"
+brew "yq"
+
+# Network diagnostics
+brew "httpie"
+
+# System monitoring
+brew "btop"
+
+# Utilities
+brew "coreutils"
+brew "gnu-sed"
+brew "watch"
+
+# Shell enhancements
+brew "zoxide"
+brew "bat"
+brew "eza"
+brew "git-delta"
+brew "starship"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+
+# Per-project tool versions and environment
+brew "mise"
+brew "direnv"
+
+# Security: secret scanning (global pre-commit hook)
+brew "gitleaks"
+
+# Linting for this repository's scripts
+brew "shellcheck"
+brew "shfmt"
+
+# Terminal emulator
+cask "ghostty"
+
+# Fonts (installed into ~/Library/Fonts, no admin rights needed)
+cask "font-martian-mono"
+
+# Container environment
+brew "colima"
+brew "docker"
+brew "docker-compose"
+
+# Dev containers (devcontainer.json) opened in VSCodium
+cask "devpod"
+
+# Code editor
+cask "vscodium"
+
+# AI coding agent
+cask "opencode-desktop"
+
+# Browser
+cask "zen"

@@ -1,0 +1,15 @@
+# Homebrew (Apple Silicon)
+if [[ -x /opt/homebrew/bin/brew ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# User-local binaries (e.g. Claude Code native install)
+if [[ -d "$HOME/.local/bin" ]]; then
+    path=("$HOME/.local/bin" $path)
+fi
+
+# Load SSH keys whose passphrases are stored in the macOS Keychain,
+# so Git commit signing works before the first SSH connection.
+if [[ "$OSTYPE" == darwin* ]]; then
+    ssh-add --apple-load-keychain -q 2>/dev/null
+fi

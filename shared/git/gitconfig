@@ -1,0 +1,46 @@
+[init]
+    defaultBranch = main
+
+[user]
+    useConfigOnly = true
+
+[pull]
+    ff = only
+
+[push]
+    default = simple
+    autoSetupRemote = true
+
+[fetch]
+    prune = true
+
+[diff]
+    algorithm = histogram
+    colorMoved = default
+
+[core]
+    quotePath = false
+    excludesFile = ~/.config/git/ignore
+
+# Use the SSH key for GitHub even when given an https:// URL,
+# so clone/fetch/push never ask for a username and password.
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+    # Lets "git log --show-signature" verify your own signatures.
+    allowedSignersFile = ~/.config/git/allowed_signers
+
+# Sign everything. setup/git.sh sets user.signingKey per machine;
+# until it is set, commits and annotated tags fail by design.
+[commit]
+    gpgSign = true
+
+[tag]
+    gpgSign = true
+
+[include]
+    path = delta.gitconfig

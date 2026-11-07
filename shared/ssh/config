@@ -1,0 +1,18 @@
+# Shared SSH client defaults.
+#
+# setup/ssh.sh includes this file at the END of ~/.ssh/config.
+# SSH uses the first value it finds for each option, so
+# host-specific settings written above it always take precedence.
+
+Host *
+  # UseKeychain exists only in Apple's OpenSSH; ignore it elsewhere.
+  IgnoreUnknown UseKeychain
+  UseKeychain yes
+  AddKeysToAgent yes
+
+  # Offer only explicitly configured keys, not every key in the agent.
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_ed25519
+
+  # Do not store readable host names in known_hosts.
+  HashKnownHosts yes

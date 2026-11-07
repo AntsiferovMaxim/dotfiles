@@ -1,0 +1,47 @@
+{
+    "window.restoreWindows": "none",
+    "window.title": "${rootName}",
+    "window.nativeTabs": true,
+    "window.commandCenter": false,
+
+    "claudeCode.useTerminal": true,
+    "claudeCode.preferredLocation": "sidebar",
+
+    "git.autofetch": true,
+    "git.ignoreRebaseWarning": true,
+
+    "explorer.compactFolders": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "explorer.openEditors.visible": 20,
+    "explorer.openEditors.sortOrder": "editorOrder",
+
+    "editor.fontFamily": "Martian Mono",
+    "terminal.integrated.fontFamily": "Martian Mono",
+    "debug.console.fontFamily": "Martian Mono",
+    "scm.inputFontFamily": "Martian Mono",
+    "markdown.preview.fontFamily": "Martian Mono",
+    "chat.fontFamily": "Martian Mono",
+    "chat.editor.fontFamily": "Martian Mono",
+    "notebook.output.fontFamily": "Martian Mono",
+    "editor.glyphMargin": false,
+    "editor.showFoldingControls": "never",
+    "editor.guides.indentation": false,
+    "editor.renderWhitespace": "none",
+    "editor.smoothScrolling": true,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.linkedEditing": true,
+    "editor.minimap.enabled": false,
+
+    "breadcrumbs.enabled": false,
+
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "workbench.editor.editorActionsLocation": "hidden",
+    "workbench.layoutControl.enabled": false,
+    "workbench.activityBar.location": "hidden",
+    "workbench.editor.showTabs": "none",
+    "workbench.editor.enablePreview": false,
+    "workbench.list.smoothScrolling": true,
+    "claudeCode.focusView": true,
+    "redhat.telemetry.enabled": true
+}

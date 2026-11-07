@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Global Git hook dispatcher, enabled through core.hooksPath.
+#
+# Every hook name in this directory is a symlink to this script.
+# core.hooksPath disables the repository's own .git/hooks, so after
+# the global checks this script runs the repository hook, if any.
+#
+# Repositories that set their own core.hooksPath (husky, lefthook)
+# bypass this dispatcher entirely, including the secret scan.
+set -euo pipefail
+
+hook="$(basename "$0")"
+
+if [[ "$hook" == pre-commit ]]; then
+  if ! command -v gitleaks > /dev/null 2>&1; then
+    echo "pre-commit: gitleaks is not installed; refusing to commit." >&2
+    echo "Install it (brew install gitleaks), or bypass once with --no-verify." >&2
+    exit 1
+  fi
+
+  # Scan only staged changes; never print the secret itself.
+  gitleaks git --pre-commit --staged --redact --no-banner
+fi
+
+# Use the common dir directly: "git rev-parse --git-path hooks"
+# honours core.hooksPath and would point back to this script.
+local_hook="$(git rev-parse --git-common-dir)/hooks/$hook"
+
+if [[ -x "$local_hook" ]]; then
+  exec "$local_hook" "$@"
+fi

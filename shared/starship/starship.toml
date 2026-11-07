@@ -1,0 +1,45 @@
+# Minimal developer prompt
+
+add_newline = true
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$rust\
+$cmd_duration\
+$line_break\
+$character"""
+
+[directory]
+style = "bold blue"
+truncation_length = 3
+truncate_to_repo = false
+
+[git_branch]
+symbol = "git:"
+style = "bold purple"
+format = " [$symbol $branch]($style)"
+
+[git_status]
+style = "yellow"
+format = " [$all_status$ahead_behind]($style)"
+
+[nodejs]
+symbol = "node"
+style = "green"
+format = " [$symbol $version]($style)"
+
+[rust]
+symbol = "rust"
+style = "red"
+format = " [$symbol $version]($style)"
+
+[cmd_duration]
+min_time = 2000
+format = " [$duration](dimmed white)"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"

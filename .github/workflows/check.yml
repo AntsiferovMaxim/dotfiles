@@ -1,0 +1,23 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: macos-latest
+    steps:
+      # Pinned to a commit SHA: tags can be moved by the action's owner.
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Install linters
+        run: brew install shellcheck shfmt gitleaks
+
+      - name: Check
+        run: make check
