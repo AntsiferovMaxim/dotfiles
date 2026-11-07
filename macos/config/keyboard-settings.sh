@@ -26,6 +26,12 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
+# Remember the input source (ABC / Ukrainian) per window and switch back to it
+# on focus. Same as "Automatically switch to a document's input source" in
+# System Settings → Keyboard → Text Input → Edit.
+defaults write com.apple.HIToolbox AppleGlobalTextInputProperties \
+  -dict TextInputGlobalPropertyPerContextInput -bool true
+
 # Allow Tab navigation across controls.
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
